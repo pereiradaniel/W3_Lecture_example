@@ -2,21 +2,29 @@
 #include <string>
 using namespace std;
 
-enum Colour
+enum class Colour // Scoped enumeration.
 {
 	Red,	// 0
 	Blue,	// 1
+};
+
+enum class WebColour // Scoped enumeration.
+{
+	Pink,
+	Green,
+	Magenta,
+	Red,
 };
 
 void paint(Colour colour)
 {
 	switch (colour)
 	{
-	case Red:
+	case Colour::Red:
 		cout << "I like red!\n";
 		break;
-	case Blue:
-		cout << "House is painted [" << colour << "].\n";
+	case Colour::Blue:
+		cout << "House is painted [blue].\n";
 		break;
 	default:
 		cout << "Not available!\n";
@@ -25,6 +33,6 @@ void paint(Colour colour)
 }
 
 int main() {
-	paint(Red);
-	paint(Blue);
+	paint(Colour::Red);
+	paint(Colour::Blue);
 }
